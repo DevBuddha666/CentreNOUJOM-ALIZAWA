@@ -1,0 +1,165 @@
+:root {
+  /* NOUJOUM Vibrant Modern Palette */
+  --color-ink: #0d1117;
+  --color-ink-muted: #57606a;
+  --color-page: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-surface-warm: #f6f8fb;
+  --color-line: #e1e4e8;
+  --color-line-strong: #d0d7de;
+
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --secondary: #3b82f6;
+  --accent: #ec4899;
+  --accent-hover: #db2777;
+  --purple: #8b5fbf;
+  --purple-dark: #6b4fa8;
+  --purple-light: #a78dcf;
+  --gold: #fbbf24;
+  --gold-soft: #fcd34d;
+  --red-accent: #ff6b35;
+  --red-accent-dark: #e55a2b;
+  --teal: #14b8a6;
+  --teal-dark: #0d9488;
+
+  --dark: var(--color-ink);
+  --muted: var(--color-ink-muted);
+  --light: #ebe6dc;
+  --light-bg: var(--color-page);
+  --border: var(--color-line);
+  --error: #b91c1c;
+  --success: #166534;
+
+  --font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  --font-family-heading: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+
+  --font-size-base: 17px;
+  --font-size-small: 14px;
+  --font-size-large: 1.125rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 56px;
+  --spacing-3xl: 80px;
+
+  --radius-small: 6px;
+  --radius-medium: 10px;
+  --radius-large: 14px;
+  --radius-xl: 20px;
+
+  --shadow-xs: 0 1px 2px rgba(18, 21, 28, 0.04);
+  --shadow-small: 0 2px 8px rgba(18, 21, 28, 0.06);
+  --shadow-medium: 0 8px 30px rgba(18, 21, 28, 0.08);
+  --shadow-large: 0 20px 50px rgba(18, 21, 28, 0.12);
+
+  --transition-fast: 0.18s ease;
+  --transition-smooth: 0.28s ease;
+  --transition-slow: 0.45s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-ink);
+  background-color: var(--color-page);
+  background-image:
+    radial-gradient(ellipse 100% 60% at 50% -15%, rgba(99, 102, 241, 0.08), transparent 55%),
+    radial-gradient(ellipse 80% 40% at 100% 0%, rgba(139, 95, 191, 0.06), transparent 45%);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.25);
+  color: var(--color-ink);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  transition: color var(--transition-fast), background var(--transition-fast),
+    border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+input,
+textarea,
+select {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+}
+
+/* Icônes react-icons : alignement avec le texte */
+.app-icon {
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 28px);
+}
+
+/* Messages colorés : utiliser le composant InfoBanner (components/ui/InfoBanner.jsx) */
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 16px;
+    --spacing-2xl: 40px;
+    --spacing-3xl: 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-md: 14px;
+    --spacing-lg: 20px;
+  }
+}

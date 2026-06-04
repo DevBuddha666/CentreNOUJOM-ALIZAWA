@@ -1,0 +1,89 @@
+/**
+ * Effet “coins qui se remplissent” au survol — couleurs du thème
+ * (primary / accent). Contenu au-dessus des pseudo-éléments.
+ */
+.card-corner-fill {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Modales / panneaux scrollables : garder le défilement vertical */
+.card-corner-fill.card-corner-fill--scrollable {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.card-corner-fill::before,
+.card-corner-fill::after {
+  position: absolute;
+  content: '';
+  width: 20%;
+  height: 20%;
+  z-index: 0;
+  pointer-events: none;
+  transition:
+    width 0.5s ease,
+    height 0.5s ease,
+    border-radius 0.5s ease,
+    background 0.45s ease;
+}
+
+.card-corner-fill::before {
+  top: 0;
+  right: 0;
+  border-radius: 0 var(--radius-large) 0 100%;
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.card-corner-fill::after {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100% 0 var(--radius-large);
+  background: rgba(139, 95, 191, 0.06);
+}
+
+.card-corner-fill:hover::before,
+.card-corner-fill:hover::after {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-large);
+}
+
+/* Une fois la carte remplie, on passe sur des voiles très clairs (page + léger or) */
+.card-corner-fill:hover::before {
+  background: rgba(99, 102, 241, 0.12);
+}
+
+.card-corner-fill:hover::after {
+  background: rgba(139, 95, 191, 0.1);
+}
+
+/* Cartes sur fond sombre (ex. stats admin) : voiles blancs discrets */
+.card-corner-fill.card-corner-fill--dark::before {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.card-corner-fill.card-corner-fill--dark::after {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.card-corner-fill.card-corner-fill--dark:hover::before {
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.card-corner-fill.card-corner-fill--dark:hover::after {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.card-corner-fill > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-corner-fill::before,
+  .card-corner-fill::after {
+    transition-duration: 0.01ms;
+  }
+}

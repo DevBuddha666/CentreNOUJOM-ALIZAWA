@@ -1,0 +1,119 @@
+/* Bannières : toast (haut droite) ou inline */
+
+.info {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+  padding: 12px 12px 12px 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+  box-sizing: border-box;
+}
+
+.info--toast {
+  position: fixed;
+  z-index: 5000;
+  top: max(16px, env(safe-area-inset-top, 0px));
+  right: max(16px, env(safe-area-inset-right, 0px));
+  width: min(360px, calc(100vw - 32px));
+  max-width: min(360px, calc(100vw - 32px));
+  margin: 0;
+  animation: infoToastIn 0.32s ease forwards;
+}
+
+.info--inline {
+  position: relative;
+  width: 100%;
+  max-width: min(100%, 420px);
+  margin-bottom: var(--spacing-md, 16px);
+}
+
+.info--success {
+  background: linear-gradient(135deg, #10b981, #14b8a6);
+}
+
+.info--error {
+  background: linear-gradient(135deg, #ff6b35, #ec4899);
+}
+
+@keyframes infoToastIn {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.info__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.info__icon-wrap svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.info__title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #fff;
+}
+
+.info__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #fff;
+  transition: background 0.15s ease;
+}
+
+.info__close:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.info__close svg {
+  display: block;
+}
+
+.info--block {
+  max-width: 100%;
+}

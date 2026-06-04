@@ -1,0 +1,196 @@
+.footer {
+  background: linear-gradient(135deg, #1a1f2e 0%, #0f1118 50%, #1a1529 100%);
+  color: rgba(255, 255, 255, 0.88);
+  margin-top: var(--spacing-3xl);
+  border-top: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.footer-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl) clamp(16px, 4vw, 28px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.footer-section {
+  animation: footerFade 0.6s ease;
+}
+
+.footer-brand {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: var(--spacing-lg);
+  transition: opacity var(--transition-fast);
+  max-width: 100%;
+}
+
+.footer-brand:hover {
+  opacity: 0.92;
+}
+
+.footer-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  border-radius: var(--radius-small);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
+
+.footer-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.15;
+}
+
+.footer-brand-name {
+  font-family: var(--font-family-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.footer-brand-sub {
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-medium);
+  color: rgba(255, 252, 247, 0.72);
+  max-width: 220px;
+  letter-spacing: 0.02em;
+}
+
+@keyframes footerFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-section--brand .footer-title {
+  margin-top: 0;
+}
+
+.footer-title {
+  font-family: var(--font-family-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.footer-subtitle {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-small);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.footer-description {
+  color: rgba(255, 252, 247, 0.72);
+  line-height: 1.75;
+  font-size: var(--font-size-small);
+}
+
+.footer-contact {
+  font-style: normal;
+  color: rgba(255, 252, 247, 0.78);
+  line-height: 1.9;
+  font-size: var(--font-size-small);
+}
+
+.footer-contact p {
+  margin: 0 0 0.35rem;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 95, 191, 0.15));
+  border: 2px solid rgba(99, 102, 241, 0.4);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 24px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.social-link:hover {
+  border-color: var(--gold);
+  color: #fff;
+  transform: translateY(-3px) scale(1.1);
+}
+
+.social-link--facebook:hover {
+  background: linear-gradient(135deg, #1877F2, #0a66c2);
+  box-shadow: 0 6px 16px rgba(24, 119, 242, 0.5);
+}
+
+.social-link--instagram:hover {
+  background: linear-gradient(135deg, #D946EF, #E911A0);
+  box-shadow: 0 6px 16px rgba(217, 70, 239, 0.5);
+}
+
+.social-link--twitter:hover {
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+.social-link--youtube:hover {
+  background: linear-gradient(135deg, #FF0000, #c41e3a);
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.5);
+}
+
+.footer-contact a {
+  color: rgba(255, 252, 247, 0.9);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(212, 168, 83, 0.5);
+}
+
+.footer-contact a:hover {
+  color: #fff;
+  text-decoration-color: var(--gold-soft);
+}
+
+.footer-phone {
+  opacity: 0.9;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: var(--spacing-lg) clamp(16px, 4vw, 28px);
+  border-top: 1px solid rgba(255, 252, 247, 0.08);
+  color: rgba(255, 252, 247, 0.45);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
