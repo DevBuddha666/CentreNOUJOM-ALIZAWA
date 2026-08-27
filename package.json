@@ -1,0 +1,11 @@
+{
+  "name": "noujoum-monolith",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "client"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}
